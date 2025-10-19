@@ -21,7 +21,7 @@ df_melted = df.melt(id_vars='gender', var_name='year', value_name='commencements
 # Remove commas, dollar signs, spaces, and convert to numeric
 df_melted['commencements'] = (
     df_melted['commencements']
-    .astype(str)                      # make sure it's a string
+    .astype(str)                    
     .str.replace(',', '', regex=False)
     .str.replace('$', '', regex=False)
     .str.strip()
@@ -55,4 +55,5 @@ plt.yticks(range(0, int(df_melted['commencements'].max()) + 25000, 25000))
 
 plt.tight_layout()
 plt.show()
+
 
